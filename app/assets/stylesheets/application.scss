@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+
+
+.thumb {
+	max-width:50%;
+  max-height:50%;
+}
+
+
+.show-pic{
+	max-width:70%;
+  max-height:70%;
+}
+
+.center-it{
+	text-align: center;
+	height: 500px;
+	background: white;
+}
