@@ -17,4 +17,8 @@ class StorefrontController < ApplicationController
   	@products = Product.where(brand: params[:brand])
   	@brand = params[:brand]
   end
+
+  
+  
+
 end

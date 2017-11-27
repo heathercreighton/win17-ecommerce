@@ -5,6 +5,7 @@ class Ability
 
     if user.admin?
         can :manage, Product
+        can :manage, User
     elsif user.guest?
         can :show, Product    
     end    

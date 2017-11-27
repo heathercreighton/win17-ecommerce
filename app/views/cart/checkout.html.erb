@@ -3,12 +3,25 @@
 <p>Here is your order summary</p>
 
 <% @order.order_items.each do |k,v| %>
+<div class="well">
   <ul>
-    <li><%= Product.find(k).name %>, <%= v %></li>
+    <li><strong>Item:</strong> <%= Product.find(k).name %>,  <strong>Quantity:</strong> <%= v %></li>
   </ul>
+</div>
 <% end %>
 
 
 
 
-<h4>Cart total: <%= number_to_currency @order.grand_total %></h4>	
+<p>
+  <strong>Subtotal: </strong><%= number_to_currency @order.subtotal %> 
+</p>
+
+<p>
+  <strong>Sales Tax: </strong><%= number_to_currency @order.sales_tax %> 
+</p>
+
+
+<p>
+  <strong>Order Total:</strong> <%= number_to_currency @order.grand_total %>
+</p>

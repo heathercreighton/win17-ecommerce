@@ -26,7 +26,13 @@ font-family: 'Titillium Web', sans-serif;
 font-family: 'Source Sans Pro', sans-serif;
 */
 
-
+.cart-pic{
+	height: 5%;
+	width: 5%;
+}
+.cart{
+	text-align: right;
+}
 .thumb {
 	max-width:50%;
   max-height:50%;
@@ -121,4 +127,9 @@ font-size: 20px;
 a, a:hover, a:visited {
     color: #030a10;
     text-decoration: none;
+}
+
+.notice {
+	color:red;
+	font-style: italic;
 }

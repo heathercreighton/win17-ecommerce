@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-	before_action :categories, :brands
+	before_action :categories, :brands, :count_items
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
 		@brands = Product.pluck(:brand).sort.uniq
 	end	
 
+	def count_items
+		@line_items = LineItem.all
+		
+	end
 end
