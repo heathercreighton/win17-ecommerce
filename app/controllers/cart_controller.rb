@@ -13,6 +13,8 @@ class CartController < ApplicationController
       #if user provides valid information we next check to see if the item has already been
       #added to prevent duplicates
   	else
+
+#call current_order      
   	 	 line_item = LineItem.where(product_id: params[:product_id].to_i).first
   	 	 	#if line_item is not found, we create it.
   	 	 	if line_item.blank?
@@ -81,6 +83,28 @@ class CartController < ApplicationController
   end  
 
 
+  def order_complete
+
+    @order = Order.find(params[:order_id])
+    @amount = (@order.grand_total.to_f.round(2) * 100).to_i
+
+    customer = Stripe::Customer.create(
+      :email => current_user.email,
+      :card => params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      :customer => customer.id,
+      :amount => @amount,
+      :description => 'Classic Creations Customer',
+      :currency => 'usd'
+    )
+
+    rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to cart_path
+
+  end 
 
 
 

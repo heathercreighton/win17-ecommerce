@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post 'delete_line_item' => 'cart#delete_line_item'
  	get 'delete_line_item' => 'cart#delete_line_item'
 
+  post 'order_complete' => 'cart#order_complete'
+
  # post 'delete_user' => 'admin#delete_user'
  # get 'delete_user' => 'admin#delete_user'
 

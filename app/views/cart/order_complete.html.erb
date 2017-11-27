@@ -1,0 +1,6 @@
+<h2>Thank you for shopping with us, <%= @order.user.email %>!</h2>
+
+<p>Your order# <%= @order.id %> will be shipping to you soon.</p>
+
+
+<p><%= link_to 'Back to Shopping', root_path, class: 'btn btn-success' %></p>

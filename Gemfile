@@ -29,6 +29,9 @@ gem 'better_errors', group: :development
 gem 'binding_of_caller' #works with better errors to see 
                         #instance variable values    
 # Use CoffeeScript for .coffee assets and views
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'figaro'
+
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
